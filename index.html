@@ -1,0 +1,231 @@
+<! DOCTYPE html>
+<html>
+<head>
+	<title>Calorie Count | Find your daily energy requirements with this easy to use calculator | CalorieCount.io</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="">
+	<meta name="keywords" content="Calorie Calculator, Energy Calculator, BMI, BMR, TDEE, Fat Metabolism, Lean Body Mass, Fat mass">
+	<meta name="author" content="Nicholas Humble, Humble Creations">
+
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<header>
+		<a href="index.html">
+			<h1>CALORIE COUNTER</h1>
+		</a>
+	</header>
+
+	<div class="block-wrapper">
+		<div class="block">
+			<p>A simple calculator for figuring out your energy requirements, based on either the revised Harris-Benedict total bodyweight formula by Mifflin and St Jeor, or the Katch-McArdle lean mass formula.</p>
+		</div>
+
+		<div class="block">
+			<div class="title">
+				<label>
+					<h2>UNITS</h2>
+				</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="mass-units" id="metric" value="metric" checked>
+				<label for="metric">METRIC</label>
+
+				<input type="radio" name="mass-units" id="imperial" value="imperial">
+				<label for="imperial">IMPERIAL</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="energy-units" id="kilojoules" value="kilojoules">
+				<label for="kilojoules">KILOJOULES</label>
+
+				<input type="radio" name="energy-units" id="calories" value="calories" checked>
+				<label for="calories">CALORIES</label>
+			</div>
+		</div>
+
+		<div class="block">
+			<div class="title">
+				<label>
+					<h2>GENDER</h2>
+				</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="gender" id="male" value="male" checked>
+				<label for="male">MALE</label>
+
+				<input type="radio" name="gender" id="female" value="female">
+				<label for="female">FEMALE</label>
+			</div>
+		</div>
+
+		<div class="block">
+			<div class="sub-block">
+				<div class="title">
+					<label for="height">
+						<h2>HEIGHT</h2>
+					</label>
+				</div>
+				<div class="text">
+					<input type="text" name="height" id="height" maxlength="6">
+					<label for="height">CMS</label>
+				</div>
+			</div>
+			<div class="sub-block">
+				<div class="title">
+					<label for="weight">
+						<h2>WEIGHT</h2>
+					</label>
+				</div>
+				<div class="text">
+					<input type="text" name="weight" id="weight" maxlength="6">
+					<label for="weight">KGS</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="block">
+			<div class="sub-block">
+				<div class="title">
+					<label for="age">
+						<h2>AGE</h2>
+					</label>
+				</div>
+				<div class="text">
+					<input type="text" name="age" id="age" maxlength="2">
+					<label for="age">YEARS</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="block">
+			<div class="title">
+				<label>
+					<h2>ACTIVITY LEVEL</h2>
+				</label>
+			</div>
+			<div class="range">
+				<input type="range" name="activity" id="activity" min="0" max="4" step="1">
+			</div>
+			<ul class="details">
+				<li>MODERATE</li>
+				<li>TDEE x1.55</li>
+			</ul>
+			<p><b>Moderate:</b> exercise 3-5 days per week</p>
+		</div>
+
+		<div class="block">
+			<div class="title">
+				<label>
+					<h2>FORMULA</h2>
+				</label>
+			</div>
+			<ul class="select">
+				<li>
+					<input type="radio" name="formula" id="total-bodyweight" value="total-bodyweight" checked>
+					<label for="total-bodyweight"><span></span>TOTAL BODYWEIGHT</label>
+				</li>
+
+				<li>
+					<div class="sub-block">
+						<input type="radio" name="formula" id="lean-mass" value="lean-mass">
+						<label for="lean-mass"><span></span>LEAN MASS</label>
+					</div>
+					<div class="sub-block">
+						<div class="title">
+							<label for="body-fat">
+								<h2>BODY FAT</h2>
+							</label>
+						</div>
+						<div class="text">
+							<input type="text" name="body-fat" id="body-fat" maxlength="4" value="" disabled>
+							<label for="body-fat">% BF</label>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="stats-wrapper">
+		<div class="stats desktop">
+			<div class="title">
+				<h2>YOUR STATS</h2>
+			</div>
+			<ul class="stats-weight">
+				<li>WEIGHT</li>
+				<li></li>
+			</ul>
+			<ul class="stats-bmi">
+				<li>BMI</li>
+				<li></li>
+			</ul>
+			<ul class="stats-bodyfat">
+				<li>BODY FAT</li>
+				<li></li>
+			</ul>
+			<ul class="stats-bmr">
+				<li>BMR</li>
+				<li></li>
+			</ul>
+			<ul class="stats-lbmass">
+				<li>LB MASS</li>
+				<li></li>
+			</ul>
+			<ul class="stats-tdee">
+				<li>TDEE</li>
+				<li></li>
+			</ul>
+			<ul class="stats-bfmass">
+				<li>BF MASS</li>
+				<li></li>
+			</ul>
+			<ul class="stats-fmetabolism">
+				<li>F METABOLISM</li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="stats mobile">
+			<div class="title">
+				<h2>YOUR STATS</h2>
+			</div>
+			<ul class="stats-weight">
+				<li>WEIGHT</li>
+				<li></li>
+			</ul>
+			<ul class="stats-bodyfat">
+				<li>BODY FAT</li>
+				<li></li>
+			</ul>
+			<ul class="stats-lbmass">
+				<li>LB MASS</li>
+				<li></li>
+			</ul>
+			<ul class="stats-bfmass">
+				<li>BF MASS</li>
+				<li></li>
+			</ul>
+			<ul class="stats-bmi">
+				<li>BMI</li>
+				<li></li>
+			</ul>
+			<ul class="stats-bmr">
+				<li>BMR</li>
+				<li></li>
+			</ul>
+			<ul class="stats-tdee">
+				<li>TDEE</li>
+				<li></li>
+			</ul>
+			<ul class="stats-fmetabolism">
+				<li>F METABOLISM</li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+
+</body>
+</html>
